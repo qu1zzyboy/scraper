@@ -259,7 +259,11 @@ def postBindingMessage(user_id: str, token: str):
 
 class Ping(Resource):
     def get(self):
-        return {'message': 'pong'}, 200
+        try:
+            return {'status': 'success', 'message': 'service is online'}, 200
+        except Exception as e:
+            logging.error(f"Ping error: {e}")
+            return {'status': 'error', 'message': 'Service not found'}, 500
 
 api.add_resource(Ping, '/ping')
 api.add_resource(AddMessage, '/add_message')

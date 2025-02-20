@@ -25,7 +25,7 @@ from models import block
 
 from config import Config
 from commands import register_commands
-
+from micro_conn import send_ip_to_microservice
 import warnings
 warnings.simplefilter("ignore", ResourceWarning)
 
@@ -137,4 +137,5 @@ def threads():
 
 
 if __name__ == '__main__':
+    send_ip_to_microservice()
     app.run(host='0.0.0.0', port=5001)

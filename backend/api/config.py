@@ -55,7 +55,8 @@ class Config:
         self.DEPLOY_ENV = get_env('DEPLOY_ENV')
         self.TESTING = False
         self.LOG_LEVEL = get_env('LOG_LEVEL')
-
+        self.SERVICE_ID= get_env('SERVICE_ID')
+        self.MICR_SERVER_URL= get_env('MIRCRO_SERVER_URL')
         self.SECRET_KEY = get_env('SECRET_KEY')
         self.NOSTR_PRIV_KEY = get_env('NOSTR_PRIV_KEY')
         self.NOSTR_RELAY_URIS = get_env('NOSTR_RELAY_URIS')
