@@ -257,7 +257,11 @@ def postBindingMessage(user_id: str, token: str):
     else:
         response.raise_for_status()
 
+class Ping(Resource):
+    def get(self):
+        return {'message': 'pong'}, 200
 
+api.add_resource(Ping, '/ping')
 api.add_resource(AddMessage, '/add_message')
 api.add_resource(getMessageByUser, '/get_message_by_user')
 api.add_resource(getMessageCntByGroup, '/get_message_cnt')
